@@ -1,35 +1,98 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { CustomeButton } from "./component/Customebutton.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const btns = [
+    {
+      cls: "display arbutus-regular",
+      label: "0.0",
+    },
+    {
+      cls: "btn btn-ac",
+      label: "AC",
+    },
+    {
+      cls: "btn btn-c",
+      label: "C",
+    },
+    {
+      cls: "btn btn-per",
+      label: "%",
+    },
+    {
+      cls: "btn btn-divide",
+      label: "/",
+    },
+    {
+      cls: "btn btn-7",
+      label: "7",
+    },
+    {
+      cls: "btn btn-8",
+      label: "8",
+    },
+    {
+      cls: "btn btn-9",
+      label: "9",
+    },
+    {
+      cls: "btn btn-x",
+      label: "*",
+    },
+    {
+      cls: "btn btn-4",
+      label: "4",
+    },
+    {
+      cls: "btn btn-5",
+      label: "5",
+    },
+    {
+      cls: "btn btn-6",
+      label: "6",
+    },
+    {
+      cls: "btn btn-minus",
+      label: "-",
+    },
+    {
+      cls: "btn btn-1",
+      label: "1",
+    },
+    {
+      cls: "btn btn-2",
+      label: "2",
+    },
+    {
+      cls: "btn btn-3",
+      label: "3",
+    },
+    {
+      cls: "btn btn-plus",
+      label: "+",
+    },
+    {
+      cls: "btn btn-0",
+      label: "0",
+    },
+    {
+      cls: "btn btn-dot",
+      label: ".",
+    },
+    {
+      cls: "btn btn-equal",
+      label: "=",
+    },
+  ];
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="wrapper flex-center">
+      <div className="calculator">
+        {btns.map((btn, i) => {
+          return <CustomeButton cls={btn.cls} label={btn.label} key={i} />;
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
